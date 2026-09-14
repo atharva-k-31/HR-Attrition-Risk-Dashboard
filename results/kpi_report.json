@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Net Retention Cost Saved",
+    "formula": "(TP x avg_replacement_cost x intervention_success_rate) - (flagged_total x intervention_cost)",
+    "assumptions": {
+      "avg_replacement_cost_per_employee": 77096.88,
+      "intervention_success_rate": 0.3,
+      "intervention_cost_per_employee": 2000
+    },
+    "target": "> $0 (net positive vs. no-model baseline)",
+    "actual_result": 10742210.16,
+    "interpretation": "On this 2250-employee test set, correctly identifying 544 true leavers and successfully retaining 30% of them (after subtracting intervention cost for all 920 flagged employees) produces an estimated net saving of $10,742,210. This scales roughly linearly with headcount, so extrapolate to your full workforce size."
+  },
+  {
+    "name": "Flight Risk Recall",
+    "formula": "TP / (TP + FN)  [of actual leavers, % correctly flagged]",
+    "target": 0.75,
+    "actual_result": 0.7483,
+    "interpretation": "The model catches 74.8% of employees who actually leave. Slightly below the 0.75 target -- missed leavers (false negatives) are the costliest error type for this business problem, so this is the KPI to watch most closely."
+  },
+  {
+    "name": "Model F1 Score",
+    "formula": "2 x (precision x recall) / (precision + recall)",
+    "target": 0.6,
+    "actual_result": 0.6606,
+    "interpretation": "F1 of 0.6606 balances precision (0.5913) against recall (0.7483), confirming the model isn't achieving recall merely by flagging everyone as a flight risk."
+  },
+  {
+    "name": "Feature Completeness Rate",
+    "formula": "1 - (missing_values / total_required_cells)",
+    "target": 0.95,
+    "actual_result": 1.0,
+    "interpretation": "100.0% of required fields are populated across 15000 raw records (0 missing values found). Exceeds the 95% target comfortably -- source data is production-quality."
+  },
+  {
+    "name": "Counterfactual Simulation Latency",
+    "formula": "avg wall-clock time per single what-if re-score (ms)",
+    "target": "< 500 ms",
+    "actual_result": 8.19,
+    "interpretation": "Average of 50 runs: 8.19 ms per counterfactual query, well within the 500ms target -- fast enough for interactive use in the dashboard."
+  }
+]

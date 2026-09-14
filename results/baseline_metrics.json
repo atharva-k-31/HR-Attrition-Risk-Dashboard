@@ -1,0 +1,38 @@
+[
+  {
+    "model": "Logistic Regression (baseline)",
+    "accuracy": 0.7698,
+    "precision": 0.6903,
+    "recall": 0.5213,
+    "f1_score": 0.594,
+    "roc_auc": 0.8099,
+    "confusion_matrix": [
+      [
+        1353,
+        170
+      ],
+      [
+        348,
+        379
+      ]
+    ]
+  },
+  {
+    "model": "Random Forest (baseline)",
+    "accuracy": 0.7627,
+    "precision": 0.7049,
+    "recall": 0.4567,
+    "f1_score": 0.5543,
+    "roc_auc": 0.8142,
+    "confusion_matrix": [
+      [
+        1384,
+        139
+      ],
+      [
+        395,
+        332
+      ]
+    ]
+  }
+]

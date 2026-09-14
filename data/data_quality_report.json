@@ -1,0 +1,15 @@
+{
+  "n_rows_raw": 15000,
+  "n_columns_raw": 32,
+  "n_missing_values": 0,
+  "n_duplicate_rows": 0,
+  "feature_completeness_rate": 1.0,
+  "n_rows_after_cleaning": 15000,
+  "n_features_final": 64,
+  "train_size": 10500,
+  "val_size": 2250,
+  "test_size": 2250,
+  "train_positive_rate": 0.323,
+  "val_positive_rate": 0.3231,
+  "test_positive_rate": 0.3231
+}

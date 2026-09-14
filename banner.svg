@@ -1,0 +1,87 @@
+<svg width="960" height="320" viewBox="0 0 960 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap');
+      .title { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; fill: #FFFFFF; letter-spacing: -0.02em; }
+      .desc { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 15px; fill: #94A3B8; }
+      .tag-text { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 13px; fill: #CBD5E1; }
+      .gauge-title { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 12px; fill: #94A3B8; letter-spacing: 0.05em; }
+      .gauge-val { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 34px; fill: #FFFFFF; }
+    </style>
+    
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1220" />
+      <stop offset="100%" stop-color="#16233D" />
+    </linearGradient>
+
+    <!-- App Risk Gauge Palette: Green -> Yellow -> Red -->
+    <linearGradient id="riskArcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C6E0B4" />   <!-- Safe Green -->
+      <stop offset="50%" stop-color="#FFE699" />  <!-- Warning Yellow -->
+      <stop offset="100%" stop-color="#F8CBAD" /> <!-- High Risk Red -->
+    </linearGradient>
+
+    <!-- Gauge Drop Shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Banner Container Box -->
+  <rect width="960" height="320" rx="16" fill="url(#bgGradient)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+
+  <!-- Left Content Block -->
+  <g transform="translate(56, 0)">
+    <text x="0" y="85" class="title">🧑‍💼 HR Attrition Risk Dashboard</text>
+    <text x="0" y="125" class="desc">Score batch flight risks, simulate counterfactual retention levers, and monitor</text>
+    <text x="0" y="149" class="desc">real-time model metrics via interactive Streamlit analytics.</text>
+
+    <!-- Perfectly Spaced Tags -->
+    <g transform="translate(0, 190)">
+      <!-- Tag 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="130" height="34" rx="17" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <text x="65" y="21" class="tag-text" text-anchor="middle">Flight Risk List</text>
+      </g>
+
+      <!-- Tag 2 -->
+      <g transform="translate(142, 0)">
+        <rect width="180" height="34" rx="17" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <text x="90" y="21" class="tag-text" text-anchor="middle">Counterfactual Simulator</text>
+      </g>
+
+      <!-- Tag 3 -->
+      <g transform="translate(334, 0)">
+        <rect width="110" height="34" rx="17" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <text x="55" y="21" class="tag-text" text-anchor="middle">KPI Reports</text>
+      </g>
+
+      <!-- Tag 4 -->
+      <g transform="translate(456, 0)">
+        <rect width="160" height="34" rx="17" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <text x="80" y="21" class="tag-text" text-anchor="middle">Individual Prediction</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Side Risk Gauge (Center origin at X: 780, Y: 180) -->
+  <g transform="translate(780, 180)" filter="url(#shadow)">
+    <!-- Background Arc Track -->
+    <path d="M -100,0 A 100,100 0 0,1 100,0" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="16" stroke-linecap="round" />
+    
+    <!-- Colored Arc Track -->
+    <path d="M -100,0 A 100,100 0 0,1 100,0" fill="none" stroke="url(#riskArcGradient)" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Indicator Needle (Rotated 35 deg toward high risk zone) -->
+    <g transform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="-82" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+      <circle cx="0" cy="0" r="8" fill="#38BDF8" />
+      <circle cx="0" cy="0" r="3" fill="#0B1220" />
+    </g>
+
+    <!-- Centered Gauge Value & Title (Placed cleanly under the pivot pin) -->
+    <text x="0" y="45" class="gauge-val" text-anchor="middle">68%</text>
+    <text x="0" y="68" class="gauge-title" text-anchor="middle">SCENARIO RISK</text>
+  </g>
+</svg>

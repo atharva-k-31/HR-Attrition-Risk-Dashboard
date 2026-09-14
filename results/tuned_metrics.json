@@ -1,0 +1,51 @@
+[
+  {
+    "model": "Logistic Regression (tuned)",
+    "best_params": {
+      "solver": "liblinear",
+      "penalty": "l2",
+      "class_weight": "balanced",
+      "C": 0.5
+    },
+    "accuracy": 0.7236,
+    "precision": 0.5541,
+    "recall": 0.74,
+    "f1_score": 0.6337,
+    "roc_auc": 0.8096,
+    "confusion_matrix": [
+      [
+        1090,
+        433
+      ],
+      [
+        189,
+        538
+      ]
+    ]
+  },
+  {
+    "model": "Random Forest (tuned)",
+    "best_params": {
+      "n_estimators": 150,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_depth": 6,
+      "class_weight": "balanced"
+    },
+    "accuracy": 0.7462,
+    "precision": 0.5874,
+    "recall": 0.7208,
+    "f1_score": 0.6473,
+    "roc_auc": 0.8159,
+    "confusion_matrix": [
+      [
+        1155,
+        368
+      ],
+      [
+        203,
+        524
+      ]
+    ]
+  }
+]
